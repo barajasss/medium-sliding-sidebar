@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sidebar</title>
+	<style>
+		*{
+			box-sizing: border-box;
+			color: #222;
+		}
+		body{
+			background-color: beige; 
+			padding: 0 20px;
+		}
+		h1{
+			text-align: center;
+		}
+		ul{
+			list-style-type: none;
+			line-height: 2;
+		}
+		button{
+			height: 50px;
+			width: 50px;
+			font-size: 30px;
+			padding: 5px;
+			outline: none;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			color: white;
+		}
+		nav{
+			background-color: skyblue;
+			width: 300px;
+			height: 100%;
+			padding: 10px;
+			position: absolute;
+			left: -300px;
+			top: 0;
+			transition: 0.5s ease;
+		}
+		button#open-btn{
+			background-color: orange;
+		}
+		button#close-btn{
+			float: right;
+			margin: 10px;
+			background-color: red;
+		}
+		button#open-btn:hover{
+			background-color: orangered;
+		}
+		button#close-btn:hover{
+			background-color: darkred;
+		}
+	</style>
+</head>
+<body>
+	<h1>Sidebar</h1>
+	<button id="open-btn">&#9776;</button>
+	<nav id="menu">
+		<button id="close-btn">X</button>
+		<h2>Sidebar Heading</h2>
+		<ul>
+			<li><a href="#">My Link 1 to portfolio</a></li>
+			<li><a href="#">My Link 2 to facebook</a></li>
+			<li><a href="#">My Link 3 to youtube</a></li>
+		</ul>
+	</nav>
+	<script>
+		var openBtn = document.getElementById("open-btn");
+		var closeBtn = document.getElementById("close-btn");
+		var menu = document.getElementById("menu");
+		openBtn.addEventListener("click", openMenu, false);
+		closeBtn.addEventListener("click", closeMenu, false);
+		function openMenu(){
+			menu.style.left = "0px";
+		}
+		function closeMenu(){
+			menu.style.left = "-300px";
+		}
+	</script>
+</body>
+</html>
